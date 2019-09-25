@@ -63,7 +63,7 @@ app.get('/movies', (req,res) => {
     if(typeof eval(avg_vote) !== 'number') {
       res.status(400).send('Must input a valid number.')
     }
-    newResults = movies.filter(vote => {
+    newResults = newResults.filter(vote => {
       return Number(vote.avg_vote) >= Number(avg_vote)
     })
   }
